@@ -1,6 +1,11 @@
 # Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering
-Installation CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code
-![Image text](https://raw.github.com/1051138574/repositpry/master/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering/picture/fig2a.jpg)
+Installation CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code.The following two images show the CAD and physical drawings of the device.
+<div align=center>
+<img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering/blob/main/picture/fig2a.png" alt="Image text" width="250" height="200"/>     <img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering/blob/main/picture/fig2b.png" alt="Image text" width="250" height="200"/>
+</div>
+
+The CAD structural diagram and prototype of the fingertip haptic device, including (A) mobile platform, (B) rocker arm, (C) fixed plate, (D) stop plate, (E) rigid linkage, (F) static platform, and (G) servo motor (H) rotating ball joint, (I) thin film pressure sensor.
+
 ## The CAD folder contains the assembly and various parts designed by our device.
 
 Static platform: made of resin using 3D printing; Outer circle diameter: 48mm
@@ -22,6 +27,9 @@ Servo motor: Size: 16 × 17 × 6.2 mm (RunesKee, RP-C18.3-STL，China)
 Thin film pressure sensor: diameter: 20mm
 
 
-## Installation process: 
+## Installation process
 
 First, install the servo motor onto static platform 1. There are six square holes on static platform 1 to fix the rectangular prism protruding from the side of the servo motor and enhance its stability. Next, install the copper pillar at the corresponding position on static platform 1. Then, install static platform 2 above the six servo motors, and securely connect static platform 1 and static platform 2 to the servo motors using screws and bolts. There is a circular hole designed on static platform 2 for the connection wire of the servo motor to pass through. Subsequently, the mobile platform and rigid connecting rod were installed, and the rotating ball head was pre installed in the rigid connecting rod. Connect the mobile platform to the rigid connecting rod through screws and nuts, with the screws passing through the rotating ball head. The other end of the rigid connecting rod is also connected to the rocker arm using this method, while the other end of the rocker arm is connected to the servo motor.
+
+## Code
+In the code section, we shared the code for the control, inverse kinematics, servo motor drive module, and membrane pressure sensor of the device. Among them, FSR is the code for the thin film pressure sensor, control is the code for device control, inverse is the code for inverse kinematics, and pcA9685 is the code for the servo motor drive module。
