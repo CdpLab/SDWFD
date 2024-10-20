@@ -3,7 +3,6 @@ Installation CAD model, bill of materials and detailed manufacturing instruction
 
 The CAD folder contains the assembly and various parts designed by our device.
 
-
 Static platform: made of resin using 3D printing; Outer circle diameter: 48mm
 
 Dynamic platform: made of resin using 3D printing; Outer circle diameter: 44mm, disc diameter: 22mm
@@ -24,4 +23,5 @@ Thin film pressure sensor: diameter: 20mm
 
 
 Installation process: 
+
 First, install the servo motor onto static platform 1. There are six square holes on static platform 1 to fix the rectangular prism protruding from the side of the servo motor and enhance its stability. Next, install the copper pillar at the corresponding position on static platform 1. Then, install static platform 2 above the six servo motors, and securely connect static platform 1 and static platform 2 to the servo motors using screws and bolts. There is a circular hole designed on static platform 2 for the connection wire of the servo motor to pass through. Subsequently, the mobile platform and rigid connecting rod were installed, and the rotating ball head was pre installed in the rigid connecting rod. Connect the mobile platform to the rigid connecting rod through screws and nuts, with the screws passing through the rotating ball head. The other end of the rigid connecting rod is also connected to the rocker arm using this method, while the other end of the rocker arm is connected to the servo motor.
