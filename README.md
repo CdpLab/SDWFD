@@ -1,6 +1,6 @@
 # Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering
 Installation CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code
-
+![Image text](https://raw.github.com/1051138574/repositpry/master/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Shape-Haptic-Rendering/picture/fig2a.jpg)
 ## The CAD folder contains the assembly and various parts designed by our device.
 
 Static platform: made of resin using 3D printing; Outer circle diameter: 48mm
