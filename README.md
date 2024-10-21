@@ -1,7 +1,7 @@
 # Design and Evaluation of a 6-DoF Wearable Fingertip Device for Haptic Shape Rendering
 Installation CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code.The following two images show the CAD and physical drawings of the device.
 <div align=center>
-<img src="https://github.com/1051138574/Design and Evaluation of a 6-DoF Wearable Fingertip Device for Haptic Shape Rendering/blob/main/picture/fig2a.png" alt="Image text" width="250" height="200"/>     <img src="https://github.com/1051138574/Design and Evaluation of a 6-DoF Wearable Fingertip Device for Haptic Shape Rendering/blob/main/picture/fig2b.png" alt="Image text" width="250" height="200"/>
+<img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Haptic-Shape-Rendering/blob/main/picture/fig2a.png" alt="Image text" width="250" height="200"/>     <img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Haptic-Shape-Rendering/blob/main/picture/fig2b.png" alt="Image text" width="250" height="200"/>
 </div>
 
 The CAD structural diagram and prototype of the fingertip haptic device, including (A) mobile platform, (B) rocker arm, (C) fixed plate, (D) stop plate, (E) rigid linkage, (F) static platform, and (G) servo motor (H) rotating ball joint, (I) thin film pressure sensor.
