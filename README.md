@@ -22,9 +22,9 @@ Screws and nuts: made of aluminum alloy.
 
 Stud: Made of brass.
 
-Servo motor: Size: 16 × 17 × 6.2 mm (RunesKee, RP-C18.3-STL，China)
+Servo motor: Size: 16 × 17 × 6.2 mm （SP017A-1，DW Hobby，China）
 
-Thin film pressure sensor: diameter: 20mm
+Thin film pressure sensor: diameter: 20mm (RP-C18.3-ST，RunesKee，China)
 
 
 ## Installation process
