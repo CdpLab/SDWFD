@@ -24,7 +24,7 @@ Stud: Made of brass.
 
 Servo motor: Size: 16 × 17 × 6.2 mm³（SP017A-1，DW Hobby，China）
 
-Thin film pressure sensor: diameter: 20mm (RP-C18.3-ST，RunesKee，China)
+Thin film pressure sensor: diameter: 20 mm (RP-C18.3-ST，RunesKee，China)
 
 
 ## Installation process
