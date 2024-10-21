@@ -22,9 +22,9 @@ Screws and nuts: made of aluminum alloy.
 
 Stud: Made of brass.
 
-Servo motor: Size: 16 × 17 × 6.2 mm³（SP017A-1，DW Hobby，China）
+Servo motor: Size: 16 × 17 × 6.2 mm³; mass:17 g; model:SP017A-1; producer:DW Hobby; country:China.
 
-Thin film pressure sensor: diameter: 20 mm (RP-C18.3-ST，RunesKee，China)
+Thin film pressure sensor: diameter: 20 mm; model:RP-C18.3-ST; producer:RunesKee; country:China.
 
 
 ## Installation process
