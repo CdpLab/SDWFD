@@ -38,3 +38,9 @@ First, install the servo motor onto static platform 1. There are six square hole
 
 ## Code
 In the code section, we shared the code for the control, inverse kinematics, servo motor drive module, and membrane pressure sensor of the device. Among them, FSR is the code for the thin film pressure sensor, control is the code for device control, inverse is the code for inverse kinematics, and pcA9685 is the code for the servo motor drive module.
+
+## Demo video
+The demonstration video can be viewed through the following link: https://youtu.be/AHHCAW3EiJQ .
+
+
+
