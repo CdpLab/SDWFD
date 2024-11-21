@@ -9,7 +9,7 @@ CAD model, bill of materials and detailed manufacturing instructions, as well as
 <img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Haptic-Shape-Rendering/blob/main/picture/fig2a.png" alt="Image text" width="250" height="200"/>     <img src="https://github.com/1051138574/Design-and-Evaluation-of-a-6-DoF-Wearable-Fingertip-Device-for-Haptic-Shape-Rendering/blob/main/picture/fig2b3.png" alt="Image text" width="250" height="200"/>
 </div>
 
-The CAD structural diagram and prototype of the fingertip haptic device, including (A) mobile platform, (B) rocker arm, (C) fixed plate, (D) stop plate, (E) rigid link, (F) static platform, (G) steering engine, (H) rotating ball joint, and (I) thin film pressure sensor.
+The CAD structural diagram and prototype of the fingertip haptic device, including (A) mobile platform, (B) rocker arm, (C) fixed plate, (D) stop plate, (E) rigid link, (F) static platform, (G) steering engine, (H) rotating ball head, and (I) thin film pressure sensor.
 
 ## The CAD folder contains the assembly and various parts designed by our device.
 
