@@ -21,7 +21,7 @@ Rocker arm: Made of resin using 3D printing. Arm length: 13mm. Note: In the CAD 
 
 Rotating ball head: made of aluminum alloy.
 
-rigid link: made of aluminum alloy.
+R  igid link: made of aluminum alloy.
 
 Screws and nuts: made of aluminum alloy.
 
