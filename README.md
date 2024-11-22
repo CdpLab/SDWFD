@@ -25,7 +25,7 @@ rigid link: made of aluminum alloy.
 
 Screws and nuts: made of aluminum alloy.
 
-Stud: Made of brass.
+Screw post: Made of brass.
 
 Steering engine: Size: 16 × 17 × 6.2 mm³; mass: 17 g; model: SP017A-1; producer: DW Hobby; country: China.
 
