@@ -17,7 +17,7 @@ Static platform: made of resin using 3D printing; Outer circle diameter: 48mm.
 
 Mobile platform: made of resin using 3D printing; Outer circle diameter: 44mm, disc diameter: 22mm.
 
-Rocker arm: Made of resin using 3D printing. Arm length: 13mm. Note: In the CAD folder, arm 2 is used for 3D printing and comes with threads. And rocker arm 1 is only used for CAD display.
+Rocker arm: Made of resin using 3D printing. Arm length: 13mm. Note: In the CAD folder, rocker arm 2 is used for 3D printing and comes with threads. And rocker arm 1 is only used for CAD display.
 
 Rotating ball head: made of aluminum alloy.
 
