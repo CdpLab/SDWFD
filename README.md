@@ -1,4 +1,4 @@
-<h1 align="center">SDWFD: A Six-DoF Wearable Fingertip Device for Haptic Shape Rendering</h1>
+<h1 align="center">Design and Evaluation of a 6-DoF Wearable Fingertip Device for Haptic Shape Rendering</h1>
 <div align=center> 
 Dapeng Chen, Da Yu, Yi Ding, Haojun Ni, Lifeng Zhu, Hong Zeng, Zhong Wei, Jia Liu, Aiguo Song
   
