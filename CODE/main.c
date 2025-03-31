@@ -14,7 +14,7 @@
 #include "event_groups.h"
 #include "semphr.h"
 #include "limits.h"
-
+#include "contorl.h"
 //任务优先级
 #define START_TASK_PRIO		1
 //任务堆栈大小	
@@ -207,12 +207,13 @@ void Controll_task(void *pvParameters) {
 //								alpha1,      /* 发送的消息内容 */
 //								portMAX_DELAY); /* 等待时间 一直等 */
 		if(pdTRUE == xReturn){
-			Servo_angle(10,60-(alpha1[0]));//-
-		Servo_angle(11,60+alpha1[1]);//+
-		Servo_angle(12,60-(alpha1[2]));
-		Servo_angle(13,60+(alpha1[3]));
-		Servo_angle(14,60-(alpha1[4])); 
-		Servo_angle(15,60+(alpha1[5]));
+			//Servo_angle(10,60-(alpha1[0]));//-
+		//Servo_angle(11,60+alpha1[1]);//+
+		//Servo_angle(12,60-(alpha1[2]));
+		//Servo_angle(13,60+(alpha1[3]));
+		//Servo_angle(14,60-(alpha1[4])); 
+		//Servo_angle(15,60+(alpha1[5]));
+			servocontrol11(alpha1);
 		}
 		else
 		{printf("数据接收出错,错误代码0x%lx\n",xReturn);}
