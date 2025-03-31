@@ -5,18 +5,19 @@
 #include "usart.h"
 #include "serial.h"				
 #include "control.h"
-//∞¥º¸≥ı ºªØ∫Ø ˝
-void FSR_IO_Init(void) //IO≥ı ºªØ
+#define ADC_BUFFER_SIZE 10
+//ÊåâÈîÆÂàùÂßãÂåñÂáΩÊï∞
+void FSR_IO_Init(void) //IOÂàùÂßãÂåñ
 { 	
 	GPIO_InitTypeDef GPIO_InitStructure;
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 // πƒ‹PC∂Àø⁄ ±÷”
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);	 //‰ΩøËÉΩPCÁ´ØÂè£Êó∂Èíü
 
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;				 // ∂Àø⁄≈‰÷√
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; 		 //ƒ¨»œœ¬¿≠
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IOø⁄ÀŸ∂»Œ™50MHz
-	GPIO_Init(GPIOC, &GPIO_InitStructure);					 //∏˘æ›…Ë∂®≤Œ ˝≥ı ºªØGPIOC
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;				 // Á´ØÂè£ÈÖçÁΩÆ
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD; 		 //ÈªòËÆ§‰∏ãÊãâ
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;		 //IOÂè£ÈÄüÂ∫¶‰∏∫50MHz
+	GPIO_Init(GPIOC, &GPIO_InitStructure);					 //Ê†πÊçÆËÆæÂÆöÂèÇÊï∞ÂàùÂßãÂåñGPIOC
 	
-	GPIO_SetBits(GPIOC,GPIO_Pin_15);					//≥ı ºªØ…Ë÷√Œ™0
+	GPIO_SetBits(GPIOC,GPIO_Pin_15);					//ÂàùÂßãÂåñËÆæÁΩÆ‰∏∫0
 	
   EXTI_InitTypeDef EXTI_InitStructure;
 	EXTI_InitStructure.EXTI_Line = EXTI_Line14;
@@ -34,11 +35,11 @@ void FSR_IO_Init(void) //IO≥ı ºªØ
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
 	NVIC_Init(&NVIC_InitStructure);
 }
-//∞¥º¸¥¶¿Ì∫Ø ˝
-//∑µªÿ∞¥º¸÷µ
-//mode:0,≤ª÷ß≥÷¡¨–¯∞¥;1,÷ß≥÷¡¨–¯∞¥;
-//0£¨√ª”–»Œ∫Œ∞¥º¸∞¥œ¬
-//1£¨KEY0∞¥œ¬
+//ÊåâÈîÆÂ§ÑÁêÜÂáΩÊï∞
+//ËøîÂõûÊåâÈîÆÂÄº
+//mode:0,‰∏çÊîØÊåÅËøûÁª≠Êåâ;1,ÊîØÊåÅËøûÁª≠Êåâ;
+//0ÔºåÊ≤°Êúâ‰ªª‰ΩïÊåâÈîÆÊåâ‰∏ã
+//1ÔºåKEY0Êåâ‰∏ã
 u8 state=0;
 extern double* x;
 extern  double* xx;
@@ -46,7 +47,7 @@ void EXTI15_10_IRQHandler(void)
 {
 	if (EXTI_GetITStatus(EXTI_Line14) == SET)
 	{
-		/*»Áπ˚≥ˆœ÷ ˝æ›¬“Ã¯µƒœ÷œÛ£¨ø…‘Ÿ¥Œ≈–∂œ“˝Ω≈µÁ∆Ω£¨“‘±‹√‚∂∂∂Ø*/
+		/*Â¶ÇÊûúÂá∫Áé∞Êï∞ÊçÆ‰π±Ë∑≥ÁöÑÁé∞Ë±°ÔºåÂèØÂÜçÊ¨°Âà§Êñ≠ÂºïËÑöÁîµÂπ≥Ôºå‰ª•ÈÅøÂÖçÊäñÂä®*/
 	if(FSR_Scan(1) == 1 && state == 0)
 		{  xx[11] -= 1;
 				x=inv(xx[3],xx[7],xx[11],xx[15],xx[19],xx[23]);
@@ -57,7 +58,7 @@ void EXTI15_10_IRQHandler(void)
 		
 		if(FSR_Scan(1) == 0 && state == 1)
 		{
-				//printf("µÕ”⁄∑ß÷µ\r\n");
+				//printf("‰Ωé‰∫éÈòÄÂÄº\r\n");
 			Serial_SendString("contact\r\n");
 				state = 0;
 		}
@@ -66,13 +67,98 @@ void EXTI15_10_IRQHandler(void)
 }
 u8 FSR_Scan(u8 mode)
 {	 
-	static u8 key_up=1;//∞¥º¸∞¥À…ø™±Í÷æ
-	if(mode)key_up=1;  //÷ß≥÷¡¨∞¥		  
+	static u8 key_up=1;//ÊåâÈîÆÊåâÊùæÂºÄÊ†áÂøó
+	if(mode)key_up=1;  //ÊîØÊåÅËøûÊåâ		  
 	if(key_up&&FSR_GPIO==1)
 	{
-		delay_ms(10);//»•∂∂∂Ø 
+		delay_ms(10);//ÂéªÊäñÂä® 
 		key_up=0;
 		if(FSR_GPIO==1)return KEY_PRESS;
 	}else if(FSR_GPIO==0)key_up=1; 	    
- 	return 0;// Œﬁ∞¥º¸∞¥œ¬
+ 	return 0;// Êó†ÊåâÈîÆÊåâ‰∏ã
+}
+
+void TIM3_Config(void)
+{
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE); 
+
+    TIM_TimeBaseStructure.TIM_Period = 999;  
+    TIM_TimeBaseStructure.TIM_Prescaler = 71; 
+    TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+    TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
+    
+    TIM_SelectOutputTrigger(TIM3, TIM_TRGOSource_Update); 
+    TIM_Cmd(TIM3, ENABLE);  
+}
+
+// ÂàùÂßãÂåñ DMA ‰º†Ëæì ADC Êï∞ÊçÆ
+void DMA_Config(uint16_t adcBuffer)
+{
+    DMA_InitTypeDef DMA_InitStructure;
+
+    RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);  
+
+    DMA_DeInit(DMA1_Channel1);  // Â§ç‰Ωç DMA1 ÈÄöÈÅì1
+    DMA_InitStructure.DMA_PeripheralBaseAddr = (uint32_t)&ADC1->DR;
+    DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)adcBuffer;
+    DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;
+    DMA_InitStructure.DMA_BufferSize = ADC_BUFFER_SIZE;
+    DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;
+    DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable;
+    DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;
+    DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord;
+    DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;
+    DMA_InitStructure.DMA_Priority = DMA_Priority_High;
+    DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
+    DMA_Init(DMA1_Channel1, &DMA_InitStructure);
+
+    DMA_Cmd(DMA1_Channel1, ENABLE);  // ‰ΩøËÉΩ DMA1 ÈÄöÈÅì1
+}
+
+// ÂàùÂßãÂåñ ADC ÈÖçÁΩÆÔºå‰ΩøÁî® TIM3 Ëß¶ÂèëÂíå DMA ‰º†Ëæì
+void Adc_Init(void)
+{ 
+    ADC_InitTypeDef ADC_InitStructure; 
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_ADC1, ENABLE);
+    RCC_ADCCLKConfig(RCC_PCLK2_Div6);  
+
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;  
+    GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+    ADC_DeInit(ADC1);
+    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
+    ADC_InitStructure.ADC_ScanConvMode = DISABLE;
+    ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;
+    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T3_TRGO; // TIM3 Ëß¶Âèë ADC
+    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+    ADC_InitStructure.ADC_NbrOfChannel = 1;
+    ADC_Init(ADC1, &ADC_InitStructure);
+
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_1, 1, ADC_SampleTime_239Cycles5);
+    
+    ADC_DMACmd(ADC1, ENABLE); 
+    ADC_Cmd(ADC1, ENABLE);
+
+    ADC_ResetCalibration(ADC1);
+    while (ADC_GetResetCalibrationStatus(ADC1));
+    ADC_StartCalibration(ADC1);
+    while (ADC_GetCalibrationStatus(ADC1));
+
+    ADC_SoftwareStartConvCmd(ADC1, ENABLE); 
+}
+long map(long x, long in_min, long in_max, long out_min, long out_max) {
+ return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+uint16_t average(uint16_t arr[], int size) {
+    int sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return (float)sum / size;  
 }
