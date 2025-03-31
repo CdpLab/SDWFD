@@ -10,14 +10,19 @@
 //#define KEY2 PEin(2)	//PE2
 //#define KEY3 PAin(0)	//PA0  WK_UP
 
-#define FSR_GPIO  GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_15)//¶ÁÈ¡
+#define FSR_GPIO  GPIO_ReadInputDataBit(GPIOC,GPIO_Pin_15)//è¯»å–
 
 
 
 #define KEY_PRESS		1
 
 
-void FSR_IO_Init(void);//IO³õÊ¼»¯
+void FSR_IO_Init(void);//IOåˆå§‹åŒ–
 void EXTI15_10_IRQHandler(void);
-u8 FSR_Scan(u8);  	//°´¼üÉ¨Ãèº¯Êı					    
+u8 FSR_Scan(u8);  	//æŒ‰é”®æ‰«æå‡½æ•°	
+void Adc_Init(void);
+u16  Get_Adc(u8 ch); 
+u16 Get_Adc_Average(u8 ch,u8 times); 
+long map(long x, long in_min, long in_max, long out_min, long out_max);
+uint16_t average(uint16_t arr[], int size);
 #endif
