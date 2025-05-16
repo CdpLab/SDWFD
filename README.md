@@ -2,7 +2,7 @@
 <div align=center> 
 Dapeng Chen, Da Yu, Yi Ding, Haojun Ni, Lifeng Zhu, Hong Zeng, Zhong Wei, Jia Liu, Aiguo Song
   
-Nanjing University of Information Science & Technology
+Nanjing University of Information Science and Technology
 </div>
 CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code.The following two images show the CAD structural diagram and prototype of the device.
 <div align=center>
