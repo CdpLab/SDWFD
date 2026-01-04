@@ -1,8 +1,9 @@
 <h1 align="center">Design and Evaluation of a 6-DoF Wearable Fingertip Device for Haptic Shape Rendering</h1>
 <div align=center> 
-Dapeng Chen, Da Yu, Yi Ding, Haojun Ni, Lifeng Zhu, Hong Zeng, Zhong Wei, Jia Liu, Aiguo Song
-  
+Dapeng Chen, Da Yu, Yi Ding, Haojun Ni, Lifeng Zhu, Hong Zeng, Zhong Wei, Jia Liu, Aiguo Song 
 Nanjing University of Information Science and Technology
+
+---
 </div>
 CAD model, bill of materials and detailed manufacturing instructions, as well as its inverse kinematics and control code.The following two images show the CAD structural diagram and prototype of the device.
 <div align=center>
